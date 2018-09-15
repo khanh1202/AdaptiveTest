@@ -1,4 +1,5 @@
-#AdaptiveTest
+# AdaptiveTest
+
 AdaptiveTest is an application that implements 8-grade students’ aptitude tested on math, recognizing critical information from a given image, spelling, listening, and writing.
 
 On the Math Test, students are asked 5 questions in multiple choice. Questions in 3 difficulties: TOUGH, TOUGHER and TOUGHEST. Values for those questions are 2, 5, 10 scores respectively
