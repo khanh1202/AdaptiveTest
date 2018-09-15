@@ -64,7 +64,8 @@ public class TestsController {
 
     @FXML
     protected void recTestClick(ActionEvent event) {
-
+        switchStatusAllButtons(true);
+        loadImageTest();
     }
 
     @FXML
@@ -125,6 +126,18 @@ public class TestsController {
             root.getChildren().add(loader.load());
             mathController = loader.<MathController>getController();
             mathController.setParentController(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * load Recognizing Critical Information test
+     */
+    public void loadImageTest() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/image_questions.fxml"));
+            root.getChildren().add(loader.load());
         } catch (IOException e) {
             e.printStackTrace();
         }

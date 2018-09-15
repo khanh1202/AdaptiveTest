@@ -6,6 +6,7 @@ import java.util.Random;
 public class QuestionBank {
     private static QuestionBank instance; //instance of the question bank, should be Singleton
     private ArrayList<MathQuestion> mathQuestions = new ArrayList<>(); //list of all math questions
+    public ArrayList<ImageQuestion> imageQuestions = new ArrayList<>(); //list of all image questions
 
     private QuestionBank() {
         initializeQuestions();
@@ -21,6 +22,14 @@ public class QuestionBank {
      * Initialize some dummy questions for the app
      */
     private void initializeQuestions() {
+        generateMathQuestions();
+        generateImageQuestions();
+    }
+
+    /**
+     * Create all math questions
+     */
+    private void generateMathQuestions() {
         mathQuestions.add(new MathQuestion("The number of 3-digit number divisible by 6, is ...", QuestionDifficulty.TOUGHER,
                 "149", "166", "150", "151", "150"));
         mathQuestions.add(new MathQuestion("What is 1004 divided by 2?" , QuestionDifficulty.TOUGH,
@@ -44,14 +53,52 @@ public class QuestionBank {
     }
 
     /**
+     * Create image questions
+     */
+    private void generateImageQuestions() {
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGH, "Point to A note", "http://www.musicawareness.com/images/CstaffTr.gif",
+                204,216, 50, 60));
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHER, "Point to President Obama", "https://i.ytimg.com/vi/qiiBjayukos/hqdefault.jpg",
+                14, 34, 112, 140));
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to Hulk", "https://images-na.ssl-images-amazon.com/images/I/61JbK%2BGDqgL._SX425_.jpg",
+                125, 164, 99, 113));
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHER, "Point to Australia", "https://geology.com/world/world-physical-map.jpg",
+                237, 267, 151, 163));
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGH, "Point to the motorbike", "https://motorbikewriter.com/content/uploads/2014/07/image26.jpg",
+                118, 159, 98, 179));
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to Golden Gate Bridge", "https://assets.digicorus.corusdigitaldev.com/wp-content/uploads/sites/19/2018/06/04142757/CartoonNetwork_WeBareBears_462x3861.jpg",
+                180, 214, 133, 144));
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGH, "Point to the corn of the horse", "https://freedesignfile.com/upload/2017/10/Cartoon-unicorns-cute-vectors-07.jpg",
+                49,62,26, 50));
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHER, "Point to Manchester United", "https://blogepl.files.wordpress.com/2012/10/english-premier-league-clubs.jpg?w=500&h=400",
+                153, 190, 79, 114));
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to the name of highest ranking player", "https://2.bp.blogspot.com/-NUlHFOoIPFk/WIiilc6RVPI/AAAAAAAAII0/jsuZvE-zlJgKZgqEH02xFfNDP7WcbS9MQCLcB/s1600/LIVE%2BATP.JPG",
+                33, 82, 0, 5));
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to The Great Wall", "https://upload.wikimedia.org/wikipedia/commons/f/fb/New7Wonders.jpg",
+                0, 72, 53, 113));
+    }
+
+    /**
      * Generate a random question from the bank
      * @param difficulty the difficulty of the question wanting to retrieve
-     * @return a question from the quesyion bank
+     * @return a question from the question bank
      */
     public MathQuestion generateRandomQuestion(QuestionDifficulty difficulty) {
         MathQuestion result = mathQuestions.get(new Random().nextInt(mathQuestions.size()));
         if (result.getDifficulty() == difficulty)
             return result;
         return generateRandomQuestion(difficulty);
+    }
+
+    /**
+     * Generate a random image question from the bank
+     * @param difficulty the difficulty of the question wanting to retrieve
+     * @return a question from the question bank
+     */
+    public ImageQuestion generateRandomImageQuestion(QuestionDifficulty difficulty) {
+        ImageQuestion result = imageQuestions.get(new Random().nextInt(mathQuestions.size()));
+        if (result.getDifficulty() == difficulty)
+            return result;
+        return generateRandomImageQuestion(difficulty);
     }
 }
