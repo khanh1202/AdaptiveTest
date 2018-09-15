@@ -178,32 +178,13 @@ public class MathController {
      * @return question from the question bank
      */
     private MathQuestion generateNextQuestion() {
-        MathQuestion result = QuestionBank.getInstance().generateRandomQuestion(nextQuestionDifficulty());
+        MathQuestion result = QuestionBank.getInstance().generateRandomQuestion(DifficultyGenerator.nextQuestionDifficulty(
+                currentQuestion, isAnswerRight
+        ));
         if (!answeredQuestions.contains(result)) {
             answeredQuestions.add(result);
             return result;
         }
         return generateNextQuestion();
-    }
-
-    /**
-     * Define the difficulty of next question
-     * @return the difficulty of next question
-     */
-    private QuestionDifficulty nextQuestionDifficulty() {
-        switch (currentQuestion.getDifficulty()) {
-            case TOUGH:
-                if (isAnswerRight)
-                    return QuestionDifficulty.TOUGHER;
-                return QuestionDifficulty.TOUGH;
-            case TOUGHER:
-                if (isAnswerRight)
-                    return QuestionDifficulty.TOUGHEST;
-                return QuestionDifficulty.TOUGH;
-            default:
-                if (isAnswerRight)
-                    return QuestionDifficulty.TOUGHEST;
-                return QuestionDifficulty.TOUGHER;
-        }
     }
 }

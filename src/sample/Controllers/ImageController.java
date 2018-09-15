@@ -124,32 +124,13 @@ public class ImageController {
      * @return question from the question bank
      */
     private ImageQuestion generateNextQuestion() {
-        ImageQuestion result = QuestionBank.getInstance().generateRandomImageQuestion(nextQuestionDifficulty());
+        ImageQuestion result = QuestionBank.getInstance().generateRandomImageQuestion(
+                DifficultyGenerator.nextQuestionDifficulty(currentQuestion, isAnswerRight)
+        );
         if (!questionsAsked.contains(result)) {
             questionsAsked.add(result);
             return result;
         }
         return generateNextQuestion();
-    }
-
-    /**
-     * Define the difficulty of next question
-     * @return the difficulty of next question
-     */
-    private QuestionDifficulty nextQuestionDifficulty() {
-        switch (currentQuestion.getDifficulty()) {
-            case TOUGH:
-                if (isAnswerRight)
-                    return QuestionDifficulty.TOUGHER;
-                return QuestionDifficulty.TOUGH;
-            case TOUGHER:
-                if (isAnswerRight)
-                    return QuestionDifficulty.TOUGHEST;
-                return QuestionDifficulty.TOUGH;
-            default:
-                if (isAnswerRight)
-                    return QuestionDifficulty.TOUGHEST;
-                return QuestionDifficulty.TOUGHER;
-        }
     }
 }
