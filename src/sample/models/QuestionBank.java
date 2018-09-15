@@ -6,7 +6,7 @@ import java.util.Random;
 public class QuestionBank {
     private static QuestionBank instance; //instance of the question bank, should be Singleton
     private ArrayList<MathQuestion> mathQuestions = new ArrayList<>(); //list of all math questions
-    public ArrayList<ImageQuestion> imageQuestions = new ArrayList<>(); //list of all image questions
+    private ArrayList<ImageQuestion> imageQuestions = new ArrayList<>(); //list of all image questions
 
     private QuestionBank() {
         initializeQuestions();

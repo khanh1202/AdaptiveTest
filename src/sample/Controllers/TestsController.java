@@ -6,20 +6,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.models.TestSession;
 
-import javax.print.DocFlavor;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class TestsController {
     @FXML
@@ -40,9 +34,16 @@ public class TestsController {
     private Label timer_lbl;
 
     private MathController mathController;
+    private ImageController imageController;
 
-    private final Integer duration = 10; //duration of the test is 20mins
+    private final Integer duration = 20*60; //duration of the test is 20mins
     private Integer currentTime = duration; //the current time of the timer, initially set at 20mins
+
+    private boolean isMathTestFinish = false;
+    private boolean isImageTestFinish = false;
+    private boolean isSpellingFinish = false;
+    private boolean isListeningFinish = false;
+    private boolean isWritingFinish = false;
 
     /**
      * Log user out and switch scene to login screen
@@ -58,13 +59,13 @@ public class TestsController {
     @FXML
     protected void mathTestClick(ActionEvent event) {
         startTimer();
-        switchStatusAllButtons(true);
+        switchStatusAllButtons(true, true, true, true, true);
         loadMath();
     }
 
     @FXML
     protected void recTestClick(ActionEvent event) {
-        switchStatusAllButtons(true);
+        switchStatusAllButtons(true, true, true, true , true);
         loadImageTest();
     }
 
@@ -98,7 +99,7 @@ public class TestsController {
                     timer_lbl.setStyle("-fx-text-fill: red");
                 if (currentTime <= 0) {
                     time.stop();
-                    switchStatusAllButtons(false);
+                    switchStatusAllButtons(false, false, false, false, false);
                 }
             }
         });
@@ -109,12 +110,13 @@ public class TestsController {
     /**
      * Enable/Disable all buttons so that the ongoing test cannot be interrupted
      */
-    private void switchStatusAllButtons(boolean isDisable) {
-        math_btn.setDisable(isDisable);
-        rec_btn.setDisable(isDisable);
-        lis_btn.setDisable(isDisable);
-        spell_btn.setDisable(isDisable);
-        write_btn.setDisable(isDisable);
+    private void switchStatusAllButtons(boolean mathOff, boolean imageOff, boolean spellingOff, boolean listeningOff,
+                                        boolean writingOff) {
+        math_btn.setDisable(mathOff);
+        rec_btn.setDisable(imageOff);
+        lis_btn.setDisable(spellingOff);
+        spell_btn.setDisable(listeningOff);
+        write_btn.setDisable(writingOff);
     }
 
     /**
@@ -138,6 +140,8 @@ public class TestsController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/image_questions.fxml"));
             root.getChildren().add(loader.load());
+            imageController = loader.<ImageController>getController();
+            imageController.setParentController(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -147,9 +151,20 @@ public class TestsController {
      * Include logics when math test is done (disable Math button, remove math component from the scene)
      */
     public void finishMathTest() {
-        math_btn.setDisable(true);
+        isMathTestFinish = true;
+        switchStatusAllButtons(isMathTestFinish, isImageTestFinish, isSpellingFinish, isListeningFinish, isWritingFinish);
         root.getChildren().remove(root.lookup("#math_pane"));
         math_btn.setText("Math (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreMathTest()) + ")");
+    }
+
+    /**
+     * Include logics when Image test is done (disable Recognize button, remove test component from the scene)
+     */
+    public void finishImageTest() {
+        isImageTestFinish = true;
+        switchStatusAllButtons(isMathTestFinish, isImageTestFinish, isSpellingFinish, isListeningFinish, isWritingFinish);
+        root.getChildren().remove(root.lookup("#image_pane"));
+        rec_btn.setText("Recog (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreImageTest()) + ")");
     }
 
 }

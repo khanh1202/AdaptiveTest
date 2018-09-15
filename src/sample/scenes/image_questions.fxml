@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<BorderPane fx:controller="sample.Controllers.ImageController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="image_pane" fx:controller="sample.Controllers.ImageController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" BorderPane.alignment="CENTER">
          <children>
