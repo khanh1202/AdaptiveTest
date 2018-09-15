@@ -29,11 +29,11 @@ public class MathController {
     @FXML
     private Button done_btn;
 
-    private Question currentQuestion; //the Question being displayed
+    private MathQuestion currentQuestion; //the Question being displayed
     private boolean isAnswerRight; //indicate if the user gets it right in previous question
     private int numQuestionsAnswered; //indicate the total number of math questions answered
     private User currentUser = TestSession.getInstance().getCurrentUser(); //The user currently taking the test
-    private ArrayList<Question> answeredQuestions = new ArrayList<>(); /* All the questions answered by user. This list is
+    private ArrayList<MathQuestion> answeredQuestions = new ArrayList<>(); /* All the questions answered by user. This list is
     to avoid generating duplicate questions */
 
     private TestsController parentController;
@@ -177,8 +177,8 @@ public class MathController {
      * Generate next question that is not answered by the user before
      * @return question from the question bank
      */
-    private Question generateNextQuestion() {
-        Question result = QuestionBank.getInstance().generateRandomQuestion(nextQuestionDifficulty());
+    private MathQuestion generateNextQuestion() {
+        MathQuestion result = QuestionBank.getInstance().generateRandomQuestion(nextQuestionDifficulty());
         if (!answeredQuestions.contains(result)) {
             answeredQuestions.add(result);
             return result;
