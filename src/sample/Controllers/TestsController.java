@@ -35,6 +35,7 @@ public class TestsController {
 
     private MathController mathController;
     private ImageController imageController;
+    private SpellingController spellingController;
 
     private final Integer duration = 20*60; //duration of the test is 20mins
     private Integer currentTime = duration; //the current time of the timer, initially set at 20mins
@@ -71,7 +72,8 @@ public class TestsController {
 
     @FXML
     protected void spellingClick(ActionEvent event) {
-
+        switchStatusAllButtons(true, true, true, true , true);
+        loadSpellingTest();
     }
 
     @FXML
@@ -114,8 +116,8 @@ public class TestsController {
                                         boolean writingOff) {
         math_btn.setDisable(mathOff);
         rec_btn.setDisable(imageOff);
-        lis_btn.setDisable(spellingOff);
-        spell_btn.setDisable(listeningOff);
+        lis_btn.setDisable(listeningOff);
+        spell_btn.setDisable(spellingOff);
         write_btn.setDisable(writingOff);
     }
 
@@ -148,6 +150,20 @@ public class TestsController {
     }
 
     /**
+     * load Spelling test
+     */
+    public void loadSpellingTest() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/spelling_questions.fxml"));
+            root.getChildren().add(loader.load());
+            spellingController = loader.<SpellingController>getController();
+            spellingController.setParentController(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Include logics when math test is done (disable Math button, remove math component from the scene)
      */
     public void finishMathTest() {
@@ -165,6 +181,16 @@ public class TestsController {
         switchStatusAllButtons(isMathTestFinish, isImageTestFinish, isSpellingFinish, isListeningFinish, isWritingFinish);
         root.getChildren().remove(root.lookup("#image_pane"));
         rec_btn.setText("Recog (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreImageTest()) + ")");
+    }
+
+    /**
+     * Include logics when Spelling test is done (disable Spelling button, remove test component from the scene)
+     */
+    public void finishSpellingTest() {
+        isSpellingFinish = true;
+        switchStatusAllButtons(isMathTestFinish, isImageTestFinish, isSpellingFinish, isListeningFinish, isWritingFinish);
+        root.getChildren().remove(root.lookup("#spelling_pane"));
+        spell_btn.setText("Spell (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreSpellingTest()) + ")");
     }
 
 }

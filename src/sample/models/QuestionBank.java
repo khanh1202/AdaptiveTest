@@ -7,6 +7,7 @@ public class QuestionBank {
     private static QuestionBank instance; //instance of the question bank, should be Singleton
     private ArrayList<MathQuestion> mathQuestions = new ArrayList<>(); //list of all math questions
     private ArrayList<ImageQuestion> imageQuestions = new ArrayList<>(); //list of all image questions
+    private ArrayList<SpellingQuestion> spellingQuestions = new ArrayList<>(); //list of all spelling questions
 
     private QuestionBank() {
         initializeQuestions();
@@ -24,6 +25,7 @@ public class QuestionBank {
     private void initializeQuestions() {
         generateMathQuestions();
         generateImageQuestions();
+        generateSpellingQuestions();
     }
 
     /**
@@ -78,6 +80,20 @@ public class QuestionBank {
                 0, 72, 53, 113));
     }
 
+    private void generateSpellingQuestions() {
+        String path = "./src/sample/resources/";
+        spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGH, path + "gallon.mp3", "gallon"));
+        spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGH, path + "generate.mp3", "generate"));
+        spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGH, path + "generous.mp3", "generous"));
+        spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGHER, path + "jasmine.mp3", "jasmine"));
+        spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGHER, path + "jerusalem.mp3", "jerusalem"));
+        spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGHER, path + "juvenile.mp3", "juvenile"));
+        spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGHEST, path + "zeus.mp3", "zeus"));
+        spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGHEST, path + "zodiac.mp3", "zodiac"));
+        spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGHEST, path + "zuchini.mp3", "zuchini"));
+        spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGHEST, path + "zurich.mp3", "zurich"));
+    }
+
     /**
      * Generate a random question from the bank
      * @param difficulty the difficulty of the question wanting to retrieve
@@ -100,5 +116,17 @@ public class QuestionBank {
         if (result.getDifficulty() == difficulty)
             return result;
         return generateRandomImageQuestion(difficulty);
+    }
+
+    /**
+     * Generate a random  question from the bank
+     * @param difficulty the difficulty of the question wanting to retrieve
+     * @return a question from the question bank
+     */
+    public SpellingQuestion generateRandomSpellingQuestion(QuestionDifficulty difficulty) {
+        SpellingQuestion result = spellingQuestions.get(new Random().nextInt(spellingQuestions.size()));
+        if (result.getDifficulty() == difficulty)
+            return result;
+        return generateRandomSpellingQuestion(difficulty);
     }
 }

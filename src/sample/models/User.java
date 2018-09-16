@@ -8,6 +8,7 @@ public class User {
     private Credential credential; //login credential of the student
     private int scoreMathTest; //math test score of the user
     private int scoreImageTest; //recognize critical info test score
+    private int scoreSpellingTest; //spelling test score
 
     public String getName() {
         return name;
@@ -27,6 +28,7 @@ public class User {
         this.credential = new Credential(id, pin, timeRegister);
         scoreMathTest = 0;
         scoreImageTest = 0;
+        scoreSpellingTest = 0;
     }
 
     public int getScoreMathTest() {
@@ -35,6 +37,10 @@ public class User {
 
     public int getScoreImageTest() {
         return scoreImageTest;
+    }
+
+    public int getScoreSpellingTest() {
+        return scoreSpellingTest;
     }
 
     /**
@@ -51,5 +57,13 @@ public class User {
      */
     public void addScoreImageTest(int scoreAdded) {
         this.scoreImageTest += scoreAdded;
+    }
+
+    /**
+     * Add score to user's spelling test
+     * @param scoreAdded score added
+     */
+    public void addScoreSpellingTest(int scoreAdded) {
+        this.scoreSpellingTest += scoreAdded;
     }
 }
