@@ -9,6 +9,13 @@ public class User {
     private int scoreMathTest; //math test score of the user
     private int scoreImageTest; //recognize critical info test score
     private int scoreSpellingTest; //spelling test score
+    private int scoreListeningTest;
+    private int scoreWritingTest;
+    private boolean hasFinishedMath; //indicate if user has finished Math test or not
+    private boolean hasFinishImage;
+    private boolean hasFinishSpelling;
+    private boolean hasFinishListening;
+    private boolean hasFinishWriting;
 
     public String getName() {
         return name;
@@ -29,6 +36,13 @@ public class User {
         scoreMathTest = 0;
         scoreImageTest = 0;
         scoreSpellingTest = 0;
+        scoreListeningTest = 0;
+        scoreWritingTest = 0;
+        hasFinishedMath = false;
+        hasFinishImage = false;
+        hasFinishListening = false;
+        hasFinishSpelling = false;
+        hasFinishWriting = false;
     }
 
     public int getScoreMathTest() {
@@ -41,6 +55,14 @@ public class User {
 
     public int getScoreSpellingTest() {
         return scoreSpellingTest;
+    }
+
+    public int getScoreListeningTest() {
+        return scoreListeningTest;
+    }
+
+    public int getScoreWritingTest() {
+        return scoreWritingTest;
     }
 
     /**
@@ -65,5 +87,45 @@ public class User {
      */
     public void addScoreSpellingTest(int scoreAdded) {
         this.scoreSpellingTest += scoreAdded;
+    }
+
+    public boolean isHasFinishedMath() {
+        return hasFinishedMath;
+    }
+
+    public boolean isHasFinishImage() {
+        return hasFinishImage;
+    }
+
+    public boolean isHasFinishSpelling() {
+        return hasFinishSpelling;
+    }
+
+    public boolean isHasFinishListening() {
+        return hasFinishListening;
+    }
+
+    public boolean isHasFinishWriting() {
+        return hasFinishWriting;
+    }
+
+    public void setHasFinishedMath(boolean hasFinishedMath) {
+        this.hasFinishedMath = hasFinishedMath;
+    }
+
+    public void setHasFinishImage(boolean hasFinishImage) {
+        this.hasFinishImage = hasFinishImage;
+    }
+
+    public void setHasFinishSpelling(boolean hasFinishSpelling) {
+        this.hasFinishSpelling = hasFinishSpelling;
+    }
+
+    public void setHasFinishListening(boolean hasFinishListening) {
+        this.hasFinishListening = hasFinishListening;
+    }
+
+    public void setHasFinishWriting(boolean hasFinishWriting) {
+        this.hasFinishWriting = hasFinishWriting;
     }
 }

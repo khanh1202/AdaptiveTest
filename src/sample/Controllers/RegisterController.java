@@ -48,8 +48,8 @@ public class RegisterController {
             User newUser = new User(name, school, id, generatePIN(), new Date());
             UserList.getInstance().addUser(newUser);
             MessageBox.showAndWait("Congratulations! You registration is successful. Your PIn is " + newUser.getCredential().getPin(), "Successful");
-            switchToTest();
             TestSession.getInstance().setUser(newUser);
+            switchToTest();
         }
     }
 

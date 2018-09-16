@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.models.TestSession;
+import sample.models.User;
 
 import java.io.IOException;
 
@@ -39,12 +40,23 @@ public class TestsController {
 
     private final Integer duration = 20*60; //duration of the test is 20mins
     private Integer currentTime = duration; //the current time of the timer, initially set at 20mins
+    private User currentUser;
 
-    private boolean isMathTestFinish = false;
-    private boolean isImageTestFinish = false;
-    private boolean isSpellingFinish = false;
-    private boolean isListeningFinish = false;
-    private boolean isWritingFinish = false;
+    @FXML
+    public void initialize() {
+        currentUser = TestSession.getInstance().getCurrentUser();
+        setTextToButtons();
+        switchStatusAllButtons(currentUser.isHasFinishedMath(), currentUser.isHasFinishImage(), currentUser.isHasFinishSpelling(),
+                currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
+    }
+
+    private void setTextToButtons() {
+        math_btn.setText("Math (" + Integer.toString(currentUser.getScoreMathTest()) + ")");
+        rec_btn.setText("Recog (" + Integer.toString(currentUser.getScoreImageTest()) + ")");
+        spell_btn.setText("Spell (" + Integer.toString(currentUser.getScoreSpellingTest()) + ")");
+        lis_btn.setText("Listen (" + Integer.toString(currentUser.getScoreListeningTest()) + ")");
+        write_btn.setText("Write (" + Integer.toString(currentUser.getScoreWritingTest()) + ")");
+    }
 
     /**
      * Log user out and switch scene to login screen
@@ -167,8 +179,9 @@ public class TestsController {
      * Include logics when math test is done (disable Math button, remove math component from the scene)
      */
     public void finishMathTest() {
-        isMathTestFinish = true;
-        switchStatusAllButtons(isMathTestFinish, isImageTestFinish, isSpellingFinish, isListeningFinish, isWritingFinish);
+        currentUser.setHasFinishedMath(true);
+        switchStatusAllButtons(currentUser.isHasFinishedMath(), currentUser.isHasFinishImage(), currentUser.isHasFinishSpelling(),
+                currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
         root.getChildren().remove(root.lookup("#math_pane"));
         math_btn.setText("Math (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreMathTest()) + ")");
     }
@@ -177,8 +190,9 @@ public class TestsController {
      * Include logics when Image test is done (disable Recognize button, remove test component from the scene)
      */
     public void finishImageTest() {
-        isImageTestFinish = true;
-        switchStatusAllButtons(isMathTestFinish, isImageTestFinish, isSpellingFinish, isListeningFinish, isWritingFinish);
+        currentUser.setHasFinishImage(true);
+        switchStatusAllButtons(currentUser.isHasFinishedMath(), currentUser.isHasFinishImage(), currentUser.isHasFinishSpelling(),
+                currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
         root.getChildren().remove(root.lookup("#image_pane"));
         rec_btn.setText("Recog (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreImageTest()) + ")");
     }
@@ -187,8 +201,9 @@ public class TestsController {
      * Include logics when Spelling test is done (disable Spelling button, remove test component from the scene)
      */
     public void finishSpellingTest() {
-        isSpellingFinish = true;
-        switchStatusAllButtons(isMathTestFinish, isImageTestFinish, isSpellingFinish, isListeningFinish, isWritingFinish);
+        currentUser.setHasFinishSpelling(true);
+        switchStatusAllButtons(currentUser.isHasFinishedMath(), currentUser.isHasFinishImage(), currentUser.isHasFinishSpelling(),
+                currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
         root.getChildren().remove(root.lookup("#spelling_pane"));
         spell_btn.setText("Spell (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreSpellingTest()) + ")");
     }
