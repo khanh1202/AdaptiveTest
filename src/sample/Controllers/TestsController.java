@@ -37,6 +37,7 @@ public class TestsController {
     private MathController mathController;
     private ImageController imageController;
     private SpellingController spellingController;
+    private ListeningController listeningController;
 
     private final Integer duration = 20*60; //duration of the test is 20mins
     private Integer currentTime = duration; //the current time of the timer, initially set at 20mins
@@ -90,7 +91,8 @@ public class TestsController {
 
     @FXML
     protected void listeningClick(ActionEvent event) {
-
+        switchStatusAllButtons(true, true, true, true , true);
+        loadListeningTest();
     }
 
     @FXML
@@ -176,6 +178,20 @@ public class TestsController {
     }
 
     /**
+     * load Listening test
+     */
+    public void loadListeningTest() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/listening_questions.fxml"));
+            root.getChildren().add(loader.load());
+            listeningController = loader.<ListeningController>getController();
+            listeningController.setParentController(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Include logics when math test is done (disable Math button, remove math component from the scene)
      */
     public void finishMathTest() {
@@ -206,6 +222,17 @@ public class TestsController {
                 currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
         root.getChildren().remove(root.lookup("#spelling_pane"));
         spell_btn.setText("Spell (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreSpellingTest()) + ")");
+    }
+
+    /**
+     * Include logics when Listening test is done (disable Listening button, remove test component from the scene)
+     */
+    public void finishListeningTest() {
+        currentUser.setHasFinishListening(true);
+        switchStatusAllButtons(currentUser.isHasFinishedMath(), currentUser.isHasFinishImage(), currentUser.isHasFinishSpelling(),
+                currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
+        root.getChildren().remove(root.lookup("#listening_pane"));
+        lis_btn.setText("Listen (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreListeningTest()) + ")");
     }
 
 }

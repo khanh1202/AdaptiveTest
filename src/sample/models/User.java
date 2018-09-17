@@ -89,6 +89,18 @@ public class User {
         this.scoreSpellingTest += scoreAdded;
     }
 
+    /**
+     * Add score to user's spelling test
+     * @param scoreAdded score added
+     */
+    public void addScoreListeningTest(int scoreAdded) {
+        this.scoreListeningTest += scoreAdded;
+    }
+
+    public void setScoreListeningTest(int scoreListeningTest) {
+        this.scoreListeningTest = scoreListeningTest;
+    }
+
     public boolean isHasFinishedMath() {
         return hasFinishedMath;
     }

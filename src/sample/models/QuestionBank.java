@@ -8,6 +8,7 @@ public class QuestionBank {
     private ArrayList<MathQuestion> mathQuestions = new ArrayList<>(); //list of all math questions
     private ArrayList<ImageQuestion> imageQuestions = new ArrayList<>(); //list of all image questions
     private ArrayList<SpellingQuestion> spellingQuestions = new ArrayList<>(); //list of all spelling questions
+    private ArrayList<ListeningQuestion> listeningQuestions = new ArrayList<>();//list of all listening questions
 
     private QuestionBank() {
         initializeQuestions();
@@ -26,6 +27,7 @@ public class QuestionBank {
         generateMathQuestions();
         generateImageQuestions();
         generateSpellingQuestions();
+        generateListeningQuestion();
     }
 
     /**
@@ -80,6 +82,9 @@ public class QuestionBank {
                 0, 72, 53, 113));
     }
 
+    /**
+     * Create spelling questions
+     */
     private void generateSpellingQuestions() {
         String path = "./src/sample/resources/";
         spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGH, path + "gallon.mp3", "gallon"));
@@ -92,6 +97,32 @@ public class QuestionBank {
         spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGHEST, path + "zodiac.mp3", "zodiac"));
         spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGHEST, path + "zuchini.mp3", "zuchini"));
         spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGHEST, path + "zurich.mp3", "zurich"));
+    }
+
+    /**
+     * Create Listening questions
+     */
+    private void generateListeningQuestion() {
+        String path = "./src/sample/resources/";
+        listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGH, "Today is ... And I'm here from ...", path + "Monday,SanFran.mp3", "Monday, San Marino",
+                "Monster, San Marino", "Monday, San Francisco", "Monsday, San Francisco", "Monday, San Francisco"));
+        listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGH, "Last week, we were in... We were at a teaching...", path + "Texas,conference.mp3", "Texas, Korean", "Texas, champions", "Texas, conference", "Texas, African", "Texas, conference"));
+        listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGHEST, "And first I just to say some nice things about...Because he is a ... person", path + "plaingrey,supernice.mp3", "blain grey, super man", "blain grey, super nice", "plain grey, super nice", "" +
+                "plain grey, super man", "plain grey, super nice"));
+        listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGHER, "He's a great ...He really helps teacher become ...", path + "teachertrainer,betterandbetter.mp3", "teaching trainer, butter and butter", "teacher trainer, butter and butter",
+                "teacher trainer, better and better", "teaching trainer, better and better", "teacher trainer, better and better"));
+        listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGHEST, "And I went to ... I went. Christan went and Joe went. We all learn ...",
+                path + "more,alot.mp3", "more, a lot", "most, a load", "more, a load", "most, a lot", "more, a lot"));
+        listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGHER, "See the next thing that happens last week was there are ...",
+                path + "computerscrashed.mp3", "computer crashed", "computers crashed", "computer thrashed", "computers thrashed", "computers crashed"));
+        listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGHEST, "First we got too many ... We got a lot of ... for watching the videos, " +
+                "or trying to ... all suddenly same time", path + "visitors,traffic,comment.mp3", "visitors, traffic, commas",
+                "viewers, traffic, comment", "visitors, traffic, comment", "viewers, troubles, comment", "visitors, traffic, comment"));
+        listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGH, "But the next problem was: that our ... file - our website ...", path + "backup.mp3", "baker", "backing", "backer", "backup", "backup"));
+        listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGHER, "Languages should be learned ..., not ...", path + "subconsciously,consciously.mp3", "subconscience, conscience", "subconsciously, consciously", "subcontiguously, contiguously",
+                "subconference, conference", "subconsciously, consciously"));
+        listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGHEST, "Sadly, most business English materials focus on ... that come from" +
+                "the 1940s and 50s. They ... and very ...", path + "models,full,stiff.mp3", "morals, awful, stiff", "models, are full, stiff", "morals, awful, stitch", "morals, are full, stiff", "models, are full, stiff"));
     }
 
     /**
@@ -128,5 +159,17 @@ public class QuestionBank {
         if (result.getDifficulty() == difficulty)
             return result;
         return generateRandomSpellingQuestion(difficulty);
+    }
+
+    /**
+     * Generate a random  question from the bank
+     * @param difficulty the difficulty of the question wanting to retrieve
+     * @return a question from the question bank
+     */
+    public ListeningQuestion generateRandomListeningQuestion(QuestionDifficulty difficulty) {
+        ListeningQuestion result = listeningQuestions.get(new Random().nextInt(spellingQuestions.size()));
+        if (result.getDifficulty() == difficulty)
+            return result;
+        return generateRandomListeningQuestion(difficulty);
     }
 }
