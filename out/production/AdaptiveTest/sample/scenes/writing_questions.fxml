@@ -24,7 +24,7 @@
                </font>
             </Label>
             <TextArea fx:id="sentence_edit" prefHeight="100.0" prefWidth="200.0" promptText="Enter Your Sentence Here..." />
-            <Label fx:id="error_lbl" text="Error Text" textFill="#bc1e1e">
+            <Label fx:id="error_lbl" text="Error Text" textFill="#bc1e1e" wrapText="true">
                <font>
                   <Font size="14.0" />
                </font>

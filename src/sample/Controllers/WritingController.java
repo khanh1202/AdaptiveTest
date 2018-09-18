@@ -1,5 +1,7 @@
 package sample.Controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -76,6 +78,26 @@ public class WritingController {
         });
         done_btn.setOnAction(e -> {
             parentController.finishWritingTest();
+        });
+        sentence_edit.textProperty().addListener(new ChangeListener<String>() { //listen to changes on text area
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                String message = "";
+                if (!GrammarChecker.isSimpleSentence(newValue))
+                    message += "Spaces, Full stop,";
+                if (!GrammarChecker.isCompoundSentence(newValue))
+                    message += "Conjunctions,";
+                if (!GrammarChecker.isComplexSentence(newValue))
+                    message += "Relative Pronouns";
+                if (message.equals("")) {
+                    error_lbl.setStyle("-fx-text-fill: green");
+                    error_lbl.setText("Perfect Sentence");
+                }
+                else {
+                    error_lbl.setStyle("-fx-text-fill: #bc1e1e");
+                    error_lbl.setText("Things for complex sentence: " + message);
+                }
+            }
         });
     }
 
