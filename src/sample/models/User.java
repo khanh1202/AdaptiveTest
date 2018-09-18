@@ -97,6 +97,14 @@ public class User {
         this.scoreListeningTest += scoreAdded;
     }
 
+    /**
+     * Add score to user's Writing test
+     * @param scoreAdded score added
+     */
+    public void addScoreWritingTest(int scoreAdded) {
+        this.scoreWritingTest += scoreAdded;
+    }
+
     public void setScoreListeningTest(int scoreListeningTest) {
         this.scoreListeningTest = scoreListeningTest;
     }

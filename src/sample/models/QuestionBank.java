@@ -172,4 +172,13 @@ public class QuestionBank {
             return result;
         return generateRandomListeningQuestion(difficulty);
     }
+
+    /**
+     * Generate a new question for writing
+     * @param difficulty the difficulty of the question generated
+     * @return a new question
+     */
+    public WritingQuestion generateWritingQuestion(QuestionDifficulty difficulty) {
+        return new WritingQuestion(difficulty);
+    }
 }

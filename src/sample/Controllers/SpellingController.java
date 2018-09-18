@@ -92,7 +92,7 @@ public class SpellingController {
                 setStatusNextButton(false);
         });
         next_btn.setOnAction(e -> {
-            switchStatusCheckButton(false); //enable all buttons
+            switchStatusCheckButton(false); //enable check buttons
             resetStyleCheckButton(); //Change style all buttons to default
             setStatusNextButton(true); //disable next button
             currentTimer = TIME_ALLOCATED; //reset the timer

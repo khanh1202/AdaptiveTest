@@ -38,6 +38,7 @@ public class TestsController {
     private ImageController imageController;
     private SpellingController spellingController;
     private ListeningController listeningController;
+    private WritingController writingController;
 
     private final Integer duration = 20*60; //duration of the test is 20mins
     private Integer currentTime = duration; //the current time of the timer, initially set at 20mins
@@ -97,7 +98,8 @@ public class TestsController {
 
     @FXML
     protected void writingClick(ActionEvent event) {
-
+        switchStatusAllButtons(true, true, true, true , true);
+        loadWritingTest();
     }
 
     /**
@@ -192,6 +194,20 @@ public class TestsController {
     }
 
     /**
+     * load Writing test
+     */
+    public void loadWritingTest() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/writing_questions.fxml"));
+            root.getChildren().add(loader.load());
+            writingController = loader.<WritingController>getController();
+            writingController.setParentController(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Include logics when math test is done (disable Math button, remove math component from the scene)
      */
     public void finishMathTest() {
@@ -233,6 +249,17 @@ public class TestsController {
                 currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
         root.getChildren().remove(root.lookup("#listening_pane"));
         lis_btn.setText("Listen (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreListeningTest()) + ")");
+    }
+
+    /**
+     * Include logics when Writing test is done (disable Spelling button, remove test component from the scene)
+     */
+    public void finishWritingTest() {
+        currentUser.setHasFinishWriting(true);
+        switchStatusAllButtons(currentUser.isHasFinishedMath(), currentUser.isHasFinishImage(), currentUser.isHasFinishSpelling(),
+                currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
+        root.getChildren().remove(root.lookup("#writing_pane"));
+        write_btn.setText("Write (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreWritingTest()) + ")");
     }
 
 }
