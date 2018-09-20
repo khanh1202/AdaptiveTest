@@ -17,7 +17,7 @@ public class User {
     private boolean hasFinishListening;
     private boolean hasFinishWriting;
     private int remainingTime; //tell how much time user has left
-    private static final Integer DURATION = 60; //DURATION of the test is 20mins
+    private static final Integer DURATION = 60*20; //DURATION of the test is 20mins
 
     public String getName() {
         return name;
@@ -67,6 +67,10 @@ public class User {
 
     public int getScoreWritingTest() {
         return scoreWritingTest;
+    }
+
+    public int getTotalScore() {
+        return scoreImageTest + scoreWritingTest + scoreListeningTest + scoreSpellingTest + scoreMathTest;
     }
 
     /**
@@ -174,5 +178,9 @@ public class User {
         hasFinishListening = true;
         hasFinishImage = true;
         hasFinishedMath = true;
+    }
+
+    public boolean hasFinishAllTest() {
+        return (hasFinishedMath && hasFinishImage && hasFinishListening && hasFinishSpelling && hasFinishWriting);
     }
 }

@@ -85,7 +85,8 @@ public class SpellingCategory implements TestCategory {
         });
         check_btn.setOnAction(e -> {
             checkAnswer();
-            time.stop(); //stop the timer
+            if (time != null)
+                time.stop(); //stop the timer
             timer_lbl.setText(""); //hide the label
             numQuestionsAnswered++;
             if (numQuestionsAnswered < 5)

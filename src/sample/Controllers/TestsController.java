@@ -46,9 +46,12 @@ public class TestsController {
         currentUser = TestSession.getInstance().getCurrentUser();
         currentTime = currentUser.getRemainingTime();
         hasTimerStart = false;
+        time = new Timeline();
         setTextToButtons();
         switchStatusAllButtons(currentUser.isHasFinishedMath(), currentUser.isHasFinishImage(), currentUser.isHasFinishSpelling(),
                 currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
+        if (currentUser.hasFinishAllTest())
+            loadResult();
     }
 
     private void setTextToButtons() {
@@ -117,7 +120,7 @@ public class TestsController {
      * Begin the test and start counting the timer
      */
     private void startTimer() {
-        time = new Timeline();
+        hasTimerStart = !hasTimerStart;
         time.setCycleCount(Timeline.INDEFINITE);
         KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
             @Override
@@ -222,6 +225,18 @@ public class TestsController {
     }
 
     /**
+     * If user has finished all the test or the time runs out, result component will be loaded
+     */
+    public void loadResult() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/results.fxml"));
+            root.getChildren().add(loader.load());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Include logics when math test is done (disable Math button, remove math component from the scene)
      */
     public void finishMathTest() {
@@ -230,6 +245,8 @@ public class TestsController {
                 currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
         root.getChildren().remove(root.lookup("#math_pane"));
         math_btn.setText("Math (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreMathTest()) + ")");
+        if (currentUser.hasFinishAllTest())
+            loadResult();
     }
 
     /**
@@ -241,6 +258,8 @@ public class TestsController {
                 currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
         root.getChildren().remove(root.lookup("#image_pane"));
         rec_btn.setText("Recog (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreImageTest()) + ")");
+        if (currentUser.hasFinishAllTest())
+            loadResult();
     }
 
     /**
@@ -252,6 +271,8 @@ public class TestsController {
                 currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
         root.getChildren().remove(root.lookup("#spelling_pane"));
         spell_btn.setText("Spell (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreSpellingTest()) + ")");
+        if (currentUser.hasFinishAllTest())
+            loadResult();
     }
 
     /**
@@ -263,6 +284,8 @@ public class TestsController {
                 currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
         root.getChildren().remove(root.lookup("#listening_pane"));
         lis_btn.setText("Listen (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreListeningTest()) + ")");
+        if (currentUser.hasFinishAllTest())
+            loadResult();
     }
 
     /**
@@ -274,6 +297,8 @@ public class TestsController {
                 currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
         root.getChildren().remove(root.lookup("#writing_pane"));
         write_btn.setText("Write (" + Integer.toString(TestSession.getInstance().getCurrentUser().getScoreWritingTest()) + ")");
+        if (currentUser.hasFinishAllTest())
+            loadResult();
     }
 
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane fx:controller="sample.Controllers.ResultController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Congratulations! You have finished the test">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="math_lbl" text="Math: ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="image_lbl" text="Recognizing Critical Info:" />
+            <Label fx:id="spelling_lbl" text="Spelling:" />
+            <Label fx:id="listening_lbl" text="Listening:" />
+            <Label fx:id="writing_lbl" text="Writing:" />
+            <Label fx:id="total_lbl" text="Total: " textFill="#cd2d2d">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
