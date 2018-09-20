@@ -10,7 +10,7 @@ import sample.models.*;
 import java.io.File;
 import java.util.ArrayList;
 
-public class ListeningController {
+public class ListeningCategory implements TestCategory {
     @FXML
     private Label difficulty_lbl;
     @FXML
@@ -109,7 +109,7 @@ public class ListeningController {
         done_btn.setOnAction(e -> {
             if (hasUserOptedForExtraAttempt)
                 currentUser.addScoreListeningTest(-5); //deduct 5pts to user if extra attempt is resorted
-            parentController.finishListeningTest();
+            finishTest();
         });
     }
 
@@ -238,5 +238,12 @@ public class ListeningController {
      */
     private boolean isEligibleToOpt() {
         return currentUser.getScoreListeningTest() >= 10;
+    }
+
+    /**
+     * Tell parent controller to close the test category
+     */
+    public void finishTest() {
+        parentController.finishListeningTest();
     }
 }

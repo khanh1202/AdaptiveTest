@@ -9,7 +9,7 @@ import sample.models.*;
 import java.util.ArrayList;
 
 
-public class MathController {
+public class MathCategory implements TestCategory {
     @FXML
     private Label question_text; //The text of the question
     @FXML
@@ -94,7 +94,7 @@ public class MathController {
             parseQuestion();
         });
         done_btn.setOnAction(e -> {
-            parentController.finishMathTest();
+            finishTest();
         });
     }
 
@@ -186,5 +186,12 @@ public class MathController {
             return result;
         }
         return generateNextQuestion();
+    }
+
+    /**
+     * Tell parent controller to close the test category
+     */
+    public void finishTest() {
+        parentController.finishMathTest();
     }
 }

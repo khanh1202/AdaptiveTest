@@ -9,7 +9,7 @@ import sample.models.*;
 
 import java.util.ArrayList;
 
-public class ImageController {
+public class ImageCategory implements TestCategory {
     @FXML
     private Label difficulty_lbl;
     @FXML
@@ -55,7 +55,7 @@ public class ImageController {
      */
     private void parseQuestion() {
         difficulty_lbl.setText(currentQuestion.getDifficulty().toString());
-        question_img.setImage(new Image(currentQuestion.getImageUrl()));
+        question_img.setImage(new Image(getClass().getResource(currentQuestion.getImageUrl()).toExternalForm()));
         question_lbl.setText(currentQuestion.getText());
         score_lbl.setText("Current Score: " + Integer.toString(currentUser.getScoreImageTest()));
     }
@@ -86,7 +86,7 @@ public class ImageController {
             parseQuestion();
         });
         done_btn.setOnAction(e -> {
-            parentController.finishImageTest();
+            finishTest();
         });
     }
 
@@ -132,5 +132,12 @@ public class ImageController {
             return result;
         }
         return generateNextQuestion();
+    }
+
+    /**
+     * Tell parent controller to close the test category
+     */
+    public void finishTest() {
+        parentController.finishImageTest();
     }
 }

@@ -34,14 +34,10 @@ public class TestsController {
     @FXML
     private Label timer_lbl;
 
-    private MathController mathController;
-    private ImageController imageController;
-    private SpellingController spellingController;
-    private ListeningController listeningController;
-    private WritingController writingController;
+    private TestCategory currentTestController;
 
-    private final Integer duration = 20*60; //duration of the test is 20mins
-    private Integer currentTime = duration; //the current time of the timer, initially set at 20mins
+    private final Integer DURATION = 60; //DURATION of the test is 20mins
+    private Integer currentTime = DURATION; //the current time of the timer, initially set at 20mins
     private User currentUser;
 
     @FXML
@@ -73,31 +69,40 @@ public class TestsController {
 
     @FXML
     protected void mathTestClick(ActionEvent event) {
-        startTimer();
+        if (currentTime == DURATION)
+            startTimer();
         switchStatusAllButtons(true, true, true, true, true);
         loadMath();
     }
 
     @FXML
     protected void recTestClick(ActionEvent event) {
+        if (currentTime == DURATION)
+            startTimer();
         switchStatusAllButtons(true, true, true, true , true);
         loadImageTest();
     }
 
     @FXML
     protected void spellingClick(ActionEvent event) {
+        if (currentTime == DURATION)
+            startTimer();
         switchStatusAllButtons(true, true, true, true , true);
         loadSpellingTest();
     }
 
     @FXML
     protected void listeningClick(ActionEvent event) {
+        if (currentTime == DURATION)
+            startTimer();
         switchStatusAllButtons(true, true, true, true , true);
         loadListeningTest();
     }
 
     @FXML
     protected void writingClick(ActionEvent event) {
+        if (currentTime == DURATION)
+            startTimer();
         switchStatusAllButtons(true, true, true, true , true);
         loadWritingTest();
     }
@@ -117,12 +122,14 @@ public class TestsController {
                     timer_lbl.setStyle("-fx-text-fill: red");
                 if (currentTime <= 0) {
                     time.stop();
-                    switchStatusAllButtons(false, false, false, false, false);
+                    currentTestController.finishTest();
+                    switchStatusAllButtons(true, true, true, true, true);
                 }
             }
         });
         time.getKeyFrames().add(frame);
         time.playFromStart();
+
     }
 
     /**
@@ -144,8 +151,8 @@ public class TestsController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/math_questions.fxml"));
             root.getChildren().add(loader.load());
-            mathController = loader.<MathController>getController();
-            mathController.setParentController(this);
+            currentTestController = loader.<MathCategory>getController();
+            currentTestController.setParentController(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -158,8 +165,8 @@ public class TestsController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/image_questions.fxml"));
             root.getChildren().add(loader.load());
-            imageController = loader.<ImageController>getController();
-            imageController.setParentController(this);
+            currentTestController = loader.<ImageCategory>getController();
+            currentTestController.setParentController(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -172,8 +179,8 @@ public class TestsController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/spelling_questions.fxml"));
             root.getChildren().add(loader.load());
-            spellingController = loader.<SpellingController>getController();
-            spellingController.setParentController(this);
+            currentTestController = loader.<SpellingCategory>getController();
+            currentTestController.setParentController(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -186,8 +193,8 @@ public class TestsController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/listening_questions.fxml"));
             root.getChildren().add(loader.load());
-            listeningController = loader.<ListeningController>getController();
-            listeningController.setParentController(this);
+            currentTestController = loader.<ListeningCategory>getController();
+            currentTestController.setParentController(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -200,8 +207,8 @@ public class TestsController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../scenes/writing_questions.fxml"));
             root.getChildren().add(loader.load());
-            writingController = loader.<WritingController>getController();
-            writingController.setParentController(this);
+            currentTestController = loader.<WritingCategory>getController();
+            currentTestController.setParentController(this);
         } catch (IOException e) {
             e.printStackTrace();
         }

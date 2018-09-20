@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import sample.models.*;
 
-public class WritingController {
+public class WritingCategory implements TestCategory {
     @FXML
     private Label difficulty_lbl;
     @FXML
@@ -77,7 +77,7 @@ public class WritingController {
             parseQuestion();
         });
         done_btn.setOnAction(e -> {
-            parentController.finishWritingTest();
+            finishTest();
         });
         sentence_edit.textProperty().addListener(new ChangeListener<String>() { //listen to changes on text area
             @Override
@@ -177,5 +177,12 @@ public class WritingController {
         return QuestionBank.getInstance().generateWritingQuestion(DifficultyGenerator.nextQuestionDifficulty(
                 currentQuestion, isAnswerRight
         ));
+    }
+
+    /**
+     * Tell parent controller to close the test category
+     */
+    public void finishTest() {
+        parentController.finishWritingTest();
     }
 }

@@ -17,7 +17,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 
-public class SpellingController {
+public class SpellingCategory implements TestCategory {
     @FXML
     private Label difficulty_lbl;
     @FXML
@@ -101,7 +101,7 @@ public class SpellingController {
             isHintUsed = false;
         });
         done_btn.setOnAction(e -> {
-            parentController.finishSpellingTest();
+            finishTest();
         });
     }
 
@@ -224,6 +224,13 @@ public class SpellingController {
             return result;
         }
         return generateNextQuestion();
+    }
+
+    /**
+     * Tell parent controller to close the test category
+     */
+    public void finishTest() {
+        parentController.finishSpellingTest();
     }
 
 }

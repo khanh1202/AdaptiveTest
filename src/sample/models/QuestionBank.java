@@ -60,25 +60,26 @@ public class QuestionBank {
      * Create image questions
      */
     private void generateImageQuestions() {
-        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGH, "Point to A note", "http://www.musicawareness.com/images/CstaffTr.gif",
+        String path = "../resources/image/";
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGH, "Point to A note", path + "note.gif",
                 204,216, 50, 60));
-        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHER, "Point to President Obama", "https://i.ytimg.com/vi/qiiBjayukos/hqdefault.jpg",
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHER, "Point to President Obama", path + "obama.jpg",
                 14, 34, 112, 140));
-        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to Hulk", "https://images-na.ssl-images-amazon.com/images/I/61JbK%2BGDqgL._SX425_.jpg",
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to Hulk", path + "hulk.jpg",
                 125, 164, 99, 113));
-        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHER, "Point to Australia", "https://geology.com/world/world-physical-map.jpg",
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHER, "Point to Australia", path + "australia.jpg",
                 237, 267, 151, 163));
-        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGH, "Point to the motorbike", "https://motorbikewriter.com/content/uploads/2014/07/image26.jpg",
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGH, "Point to the motorbike", path + "motorbike.jpg",
                 118, 159, 98, 179));
-        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to Golden Gate Bridge", "https://assets.digicorus.corusdigitaldev.com/wp-content/uploads/sites/19/2018/06/04142757/CartoonNetwork_WeBareBears_462x3861.jpg",
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to Golden Gate Bridge", path + "goldengate.jpg",
                 180, 214, 133, 144));
-        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGH, "Point to the corn of the horse", "https://freedesignfile.com/upload/2017/10/Cartoon-unicorns-cute-vectors-07.jpg",
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGH, "Point to the corn of the horse", path + "unicorn.jpg",
                 49,62,26, 50));
-        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHER, "Point to Manchester United", "https://blogepl.files.wordpress.com/2012/10/english-premier-league-clubs.jpg?w=500&h=400",
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHER, "Point to Manchester United", path + "epl.jpg",
                 153, 190, 79, 114));
-        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to the name of highest ranking player", "https://2.bp.blogspot.com/-NUlHFOoIPFk/WIiilc6RVPI/AAAAAAAAII0/jsuZvE-zlJgKZgqEH02xFfNDP7WcbS9MQCLcB/s1600/LIVE%2BATP.JPG",
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to the name of highest ranking player", path + "ranking.JPG",
                 33, 82, 0, 5));
-        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to The Great Wall", "https://upload.wikimedia.org/wikipedia/commons/f/fb/New7Wonders.jpg",
+        imageQuestions.add(new ImageQuestion(QuestionDifficulty.TOUGHEST, "Point to The Great Wall", path + "7wonders.jpg",
                 0, 72, 53, 113));
     }
 
@@ -86,7 +87,7 @@ public class QuestionBank {
      * Create spelling questions
      */
     private void generateSpellingQuestions() {
-        String path = "./src/sample/resources/";
+        String path = "./src/sample/resources/audio/";
         spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGH, path + "gallon.mp3", "gallon"));
         spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGH, path + "generate.mp3", "generate"));
         spellingQuestions.add(new SpellingQuestion(QuestionDifficulty.TOUGH, path + "generous.mp3", "generous"));
@@ -103,7 +104,7 @@ public class QuestionBank {
      * Create Listening questions
      */
     private void generateListeningQuestion() {
-        String path = "./src/sample/resources/";
+        String path = "./src/sample/resources/audio/";
         listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGH, "Today is ... And I'm here from ...", path + "Monday,SanFran.mp3", "Monday, San Marino",
                 "Monster, San Marino", "Monday, San Francisco", "Monsday, San Francisco", "Monday, San Francisco"));
         listeningQuestions.add(new ListeningQuestion(QuestionDifficulty.TOUGH, "Last week, we were in... We were at a teaching...", path + "Texas,conference.mp3", "Texas, Korean", "Texas, champions", "Texas, conference", "Texas, African", "Texas, conference"));
