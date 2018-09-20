@@ -33,16 +33,19 @@ public class TestsController {
     private Button lis_btn; //listening button
     @FXML
     private Label timer_lbl;
+    private Timeline time; //the timer of the whole test session
 
     private TestCategory currentTestController;
 
-    private final Integer DURATION = 60; //DURATION of the test is 20mins
-    private Integer currentTime = DURATION; //the current time of the timer, initially set at 20mins
+    private Integer currentTime;
     private User currentUser;
+    private boolean hasTimerStart; //indicate if the test session of a user has already started
 
     @FXML
     public void initialize() {
         currentUser = TestSession.getInstance().getCurrentUser();
+        currentTime = currentUser.getRemainingTime();
+        hasTimerStart = false;
         setTextToButtons();
         switchStatusAllButtons(currentUser.isHasFinishedMath(), currentUser.isHasFinishImage(), currentUser.isHasFinishSpelling(),
                 currentUser.isHasFinishListening(), currentUser.isHasFinishWriting());
@@ -62,6 +65,9 @@ public class TestsController {
      */
     @FXML
     protected void logoutClick(ActionEvent event) {
+        time.stop();
+        hasTimerStart = false;
+        currentUser.setRemainingTime(currentTime); //next time user logs in, he will only alloted the time remained from the last session
         Stage currentStage = (Stage) logout_btn.getScene().getWindow();
         SceneSwitcher.getInstance().switchScene("../scenes/login.fxml", currentStage);
         TestSession.getInstance().endSession();
@@ -69,7 +75,7 @@ public class TestsController {
 
     @FXML
     protected void mathTestClick(ActionEvent event) {
-        if (currentTime == DURATION)
+        if (!hasTimerStart)
             startTimer();
         switchStatusAllButtons(true, true, true, true, true);
         loadMath();
@@ -77,7 +83,7 @@ public class TestsController {
 
     @FXML
     protected void recTestClick(ActionEvent event) {
-        if (currentTime == DURATION)
+        if (!hasTimerStart) //if timer has not been started
             startTimer();
         switchStatusAllButtons(true, true, true, true , true);
         loadImageTest();
@@ -85,7 +91,7 @@ public class TestsController {
 
     @FXML
     protected void spellingClick(ActionEvent event) {
-        if (currentTime == DURATION)
+        if (!hasTimerStart)
             startTimer();
         switchStatusAllButtons(true, true, true, true , true);
         loadSpellingTest();
@@ -93,7 +99,7 @@ public class TestsController {
 
     @FXML
     protected void listeningClick(ActionEvent event) {
-        if (currentTime == DURATION)
+        if (!hasTimerStart)
             startTimer();
         switchStatusAllButtons(true, true, true, true , true);
         loadListeningTest();
@@ -101,7 +107,7 @@ public class TestsController {
 
     @FXML
     protected void writingClick(ActionEvent event) {
-        if (currentTime == DURATION)
+        if (!hasTimerStart)
             startTimer();
         switchStatusAllButtons(true, true, true, true , true);
         loadWritingTest();
@@ -111,7 +117,7 @@ public class TestsController {
      * Begin the test and start counting the timer
      */
     private void startTimer() {
-        Timeline time = new Timeline();
+        time = new Timeline();
         time.setCycleCount(Timeline.INDEFINITE);
         KeyFrame frame = new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
             @Override

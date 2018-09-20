@@ -3,78 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/ImageController$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/ImageController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/ListeningController$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/ListeningController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/MathController$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/MathController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/SpellingController$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/SpellingController$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/SpellingController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/TestsController$1.class" afterPath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/TestsController$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/TestsController.class" afterPath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/TestsController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/WritingController$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/WritingController$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/Controllers/WritingController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/models/QuestionBank.class" afterPath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/models/QuestionBank.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/Monday,SanFran.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/Texas,conference.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/backup.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/computerscrashed.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/gallon.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/generate.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/generous.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/jasmine.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/jerusalem.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/juvenile.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/models,full,stiff.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/more,alot.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/plaingrey,supernice.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/subconsciously,consciously.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/teachertrainer,betterandbetter.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/visitors,traffic,comment.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/zeus.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/zodiac.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/zuchini.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/resources/zurich.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/scenes/image_questions.fxml" afterPath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/scenes/image_questions.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/scenes/listening_questions.fxml" afterPath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/scenes/listening_questions.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/scenes/math_questions.fxml" afterPath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/scenes/math_questions.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/scenes/spelling_questions.fxml" afterPath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/scenes/spelling_questions.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/scenes/writing_questions.fxml" afterPath="$PROJECT_DIR$/out/production/AdaptiveTest/sample/scenes/writing_questions.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/ImageController.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/ImageCategory.java" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/ListeningController.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/ListeningCategory.java" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/MathController.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/MathCategory.java" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/SpellingController.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/SpellingCategory.java" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controllers/TestsController.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/TestsController.java" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controllers/WritingController.java" afterPath="$PROJECT_DIR$/src/sample/Controllers/WritingCategory.java" />
-      <change beforePath="$PROJECT_DIR$/src/sample/models/QuestionBank.java" afterPath="$PROJECT_DIR$/src/sample/models/QuestionBank.java" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/Monday,SanFran.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/Texas,conference.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/backup.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/computerscrashed.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/gallon.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/generate.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/generous.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/jasmine.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/jerusalem.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/juvenile.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/models,full,stiff.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/more,alot.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/plaingrey,supernice.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/subconsciously,consciously.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/teachertrainer,betterandbetter.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/visitors,traffic,comment.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/zeus.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/zodiac.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/zuchini.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/resources/zurich.mp3" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/scenes/image_questions.fxml" afterPath="$PROJECT_DIR$/src/sample/scenes/image_questions.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/sample/scenes/listening_questions.fxml" afterPath="$PROJECT_DIR$/src/sample/scenes/listening_questions.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/sample/scenes/math_questions.fxml" afterPath="$PROJECT_DIR$/src/sample/scenes/math_questions.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/sample/scenes/spelling_questions.fxml" afterPath="$PROJECT_DIR$/src/sample/scenes/spelling_questions.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/sample/scenes/writing_questions.fxml" afterPath="$PROJECT_DIR$/src/sample/scenes/writing_questions.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/sample/models/User.java" afterPath="$PROJECT_DIR$/src/sample/models/User.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -151,18 +81,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RegisterController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Controllers/RegisterController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-213">
-              <caret line="51" column="27" lean-forward="false" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SpellingCategory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Controllers/SpellingCategory.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -189,6 +107,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/models/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="e#4187#4188#0" expanded="true" />
+                <element signature="e#4223#4224#0" expanded="true" />
+                <element signature="e#4278#4279#0" expanded="true" />
+                <element signature="e#4328#4329#0" expanded="true" />
+                <element signature="e#4371#4372#0" expanded="true" />
+                <element signature="e#4402#4403#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="QuestionBank.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/models/QuestionBank.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -202,14 +137,14 @@
       <file leaf-file-name="TestsController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TestsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="124" column="55" lean-forward="false" selection-start-line="124" selection-start-column="55" selection-end-line="124" selection-end-column="55" />
+            <state relative-caret-position="1020">
+              <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding>
-                <element signature="e#5251#5265#0" expanded="true" />
-                <element signature="e#5741#5756#0" expanded="true" />
-                <element signature="e#6214#6232#0" expanded="true" />
-                <element signature="e#6693#6712#0" expanded="true" />
-                <element signature="e#7167#7184#0" expanded="true" />
+                <element signature="e#5523#5537#0" expanded="true" />
+                <element signature="e#6013#6028#0" expanded="true" />
+                <element signature="e#6486#6504#0" expanded="true" />
+                <element signature="e#6965#6984#0" expanded="true" />
+                <element signature="e#7439#7456#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -354,7 +289,6 @@
         <option value="$PROJECT_DIR$/src/sample/scenes/listening_questions.fxml" />
         <option value="$PROJECT_DIR$/src/sample/models/GrammarChecker.java" />
         <option value="$PROJECT_DIR$/src/sample/models/WritingQuestion.java" />
-        <option value="$PROJECT_DIR$/src/sample/models/User.java" />
         <option value="$PROJECT_DIR$/src/sample/scenes/writing_questions.fxml" />
         <option value="$PROJECT_DIR$/src/sample/models/QuestionBank.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/LoginController.java" />
@@ -367,6 +301,7 @@
         <option value="$PROJECT_DIR$/src/sample/Controllers/SpellingCategory.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/ImageCategory.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/TestCategory.java" />
+        <option value="$PROJECT_DIR$/src/sample/models/User.java" />
         <option value="$PROJECT_DIR$/src/sample/Controllers/TestsController.java" />
       </list>
     </option>
@@ -641,7 +576,7 @@
       <workItem from="1536740959718" duration="10418000" />
       <workItem from="1536811737968" duration="26908000" />
       <workItem from="1537014552175" duration="34207000" />
-      <workItem from="1537186111019" duration="25410000" />
+      <workItem from="1537186111019" duration="27453000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor Code, make Question abstract">
       <created>1537031691783</created>
@@ -654,7 +589,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119841000" />
+    <option name="totallyTimeSpent" value="121884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="722" extended-state="0" />
@@ -671,7 +606,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1048,57 +983,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="102" column="7" lean-forward="false" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
-          <folding>
-            <element signature="e#1486#1487#0" expanded="false" />
-            <element signature="e#1522#1523#0" expanded="false" />
-            <element signature="e#1560#1561#0" expanded="false" />
-            <element signature="e#1597#1598#0" expanded="false" />
-            <element signature="e#1638#1639#0" expanded="false" />
-            <element signature="e#1678#1679#0" expanded="false" />
-            <element signature="e#1720#1721#0" expanded="false" />
-            <element signature="e#1761#1762#0" expanded="false" />
-            <element signature="e#1801#1802#0" expanded="false" />
-            <element signature="e#1840#1841#0" expanded="false" />
-            <element signature="e#1982#1983#0" expanded="false" />
-            <element signature="e#2030#2031#0" expanded="false" />
-            <element signature="e#2174#2175#0" expanded="false" />
-            <element signature="e#2223#2224#0" expanded="false" />
-            <element signature="e#2373#2374#0" expanded="false" />
-            <element signature="e#2425#2426#0" expanded="false" />
-            <element signature="e#2576#2577#0" expanded="false" />
-            <element signature="e#2629#2630#0" expanded="false" />
-            <element signature="e#2777#2778#0" expanded="false" />
-            <element signature="e#2828#2829#0" expanded="false" />
-            <element signature="e#2893#2894#0" expanded="false" />
-            <element signature="e#2953#2954#0" expanded="false" />
-            <element signature="e#2995#2996#0" expanded="false" />
-            <element signature="e#3033#3034#0" expanded="false" />
-            <element signature="e#3074#3075#0" expanded="false" />
-            <element signature="e#3111#3112#0" expanded="false" />
-            <element signature="e#3155#3156#0" expanded="false" />
-            <element signature="e#3195#3196#0" expanded="false" />
-            <element signature="e#3240#3241#0" expanded="false" />
-            <element signature="e#3281#3282#0" expanded="false" />
-            <element signature="e#3324#3325#0" expanded="false" />
-            <element signature="e#3363#3364#0" expanded="false" />
-            <element signature="e#3426#3427#0" expanded="false" />
-            <element signature="e#3480#3481#0" expanded="false" />
-            <element signature="e#3541#3542#0" expanded="false" />
-            <element signature="e#3593#3594#0" expanded="false" />
-            <element signature="e#3660#3661#0" expanded="false" />
-            <element signature="e#3718#3719#0" expanded="false" />
-            <element signature="e#3787#3788#0" expanded="false" />
-            <element signature="e#3847#3848#0" expanded="false" />
-            <element signature="e#3912#3913#0" expanded="false" />
-            <element signature="e#3968#3969#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/models/UserList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -1195,35 +1079,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/WritingCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="79" column="25" lean-forward="false" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
-          <folding>
-            <element signature="e#6459#6460#0" expanded="true" />
-            <element signature="e#6511#6512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TestCategory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="62" lean-forward="false" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ImageCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#1611#1612#0" expanded="true" />
-            <element signature="e#1666#1667#0" expanded="true" />
-            <element signature="e#5042#5043#0" expanded="true" />
-            <element signature="e#5092#5093#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1245,16 +1105,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/ImageCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="e#1611#1612#0" expanded="true" />
+            <element signature="e#1666#1667#0" expanded="true" />
+            <element signature="e#5042#5043#0" expanded="true" />
+            <element signature="e#5092#5093#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controllers/WritingCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="79" column="25" lean-forward="false" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+          <folding>
+            <element signature="e#6459#6460#0" expanded="true" />
+            <element signature="e#6511#6512#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#4187#4188#0" expanded="true" />
+            <element signature="e#4223#4224#0" expanded="true" />
+            <element signature="e#4278#4279#0" expanded="true" />
+            <element signature="e#4328#4329#0" expanded="true" />
+            <element signature="e#4371#4372#0" expanded="true" />
+            <element signature="e#4402#4403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controllers/TestsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="124" column="55" lean-forward="false" selection-start-line="124" selection-start-column="55" selection-end-line="124" selection-end-column="55" />
+        <state relative-caret-position="1020">
+          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
-            <element signature="e#5251#5265#0" expanded="true" />
-            <element signature="e#5741#5756#0" expanded="true" />
-            <element signature="e#6214#6232#0" expanded="true" />
-            <element signature="e#6693#6712#0" expanded="true" />
-            <element signature="e#7167#7184#0" expanded="true" />
+            <element signature="e#5523#5537#0" expanded="true" />
+            <element signature="e#6013#6028#0" expanded="true" />
+            <element signature="e#6486#6504#0" expanded="true" />
+            <element signature="e#6965#6984#0" expanded="true" />
+            <element signature="e#7439#7456#0" expanded="true" />
           </folding>
         </state>
       </provider>

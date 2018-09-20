@@ -16,6 +16,8 @@ public class User {
     private boolean hasFinishSpelling;
     private boolean hasFinishListening;
     private boolean hasFinishWriting;
+    private int remainingTime; //tell how much time user has left
+    private static final Integer DURATION = 60; //DURATION of the test is 20mins
 
     public String getName() {
         return name;
@@ -43,6 +45,8 @@ public class User {
         hasFinishListening = false;
         hasFinishSpelling = false;
         hasFinishWriting = false;
+        remainingTime = DURATION;
+
     }
 
     public int getScoreMathTest() {
@@ -147,5 +151,17 @@ public class User {
 
     public void setHasFinishWriting(boolean hasFinishWriting) {
         this.hasFinishWriting = hasFinishWriting;
+    }
+
+    public int getRemainingTime() {
+        return remainingTime;
+    }
+
+    public void setRemainingTime(int remainingTime) {
+        this.remainingTime = remainingTime;
+    }
+
+    public static Integer getDURATION() {
+        return DURATION;
     }
 }
