@@ -71,7 +71,7 @@ public class SpellingCategory implements TestCategory {
      * Parse question difficulty and score to buttons and labels
      */
     private void parseQuestion() {
-        difficulty_lbl.setText(currentQuestion.getDifficulty().toString());
+        difficulty_lbl.setText("Question " + Integer.toString(numQuestionsAnswered + 1) + " (" + currentQuestion.getDifficulty().toString() + ")");
         score_lbl.setText("Current Score: " + Integer.toString(currentUser.getScoreSpellingTest()));
     }
 
@@ -96,6 +96,7 @@ public class SpellingCategory implements TestCategory {
             resetStyleCheckButton(); //Change style all buttons to default
             setStatusNextButton(true); //disable next button
             currentTimer = TIME_ALLOCATED; //reset the timer
+            answer_txt.setText(""); //clear the content of the answer field
             currentQuestion = generateNextQuestion();
             parseQuestion();
             isHintUsed = false;

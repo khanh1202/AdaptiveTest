@@ -62,7 +62,7 @@ public class MathCategory implements TestCategory {
      */
     private void parseQuestion() {
         question_text.setText(currentQuestion.getText());
-        difficulty_lbl.setText(currentQuestion.getDifficulty().toString());
+        difficulty_lbl.setText("Question " + Integer.toString(numQuestionsAnswered + 1) + " (" + currentQuestion.getDifficulty().toString() + ")");
         score_lbl.setText("Current Score: " + Integer.toString(currentUser.getScoreMathTest()));
         answerA.setText(currentQuestion.getPossibleAnswers().get(0).getText());
         answerB.setText(currentQuestion.getPossibleAnswers().get(1).getText());

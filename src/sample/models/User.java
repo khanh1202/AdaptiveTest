@@ -164,4 +164,15 @@ public class User {
     public static Integer getDURATION() {
         return DURATION;
     }
+
+    /**
+     * this method is called when the clock runs out, so the user cannot do any more test
+     */
+    public void finishAllTest() {
+        hasFinishWriting = true;
+        hasFinishSpelling = true;
+        hasFinishListening = true;
+        hasFinishImage = true;
+        hasFinishedMath = true;
+    }
 }

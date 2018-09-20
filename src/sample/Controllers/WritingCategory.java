@@ -55,7 +55,7 @@ public class WritingCategory implements TestCategory {
      */
     private void parseQuestion() {
         question_lbl.setText(currentQuestion.getText());
-        difficulty_lbl.setText(currentQuestion.getDifficulty().toString());
+        difficulty_lbl.setText("Question " + Integer.toString(numQuestionsAnswered + 1) + " (" + currentQuestion.getDifficulty().toString() + ")");
         score_lbl.setText("Current Score: " + Integer.toString(currentUser.getScoreWritingTest()));
     }
 
@@ -73,6 +73,7 @@ public class WritingCategory implements TestCategory {
             switchStatusCheckButton(false); //enable check buttons
             resetStyleCheckButton(); //Change style all buttons to default
             setStatusNextButton(true); //disable next button
+            sentence_edit.setText(""); //clear content of the edit text field
             currentQuestion = generateNextQuestion();
             parseQuestion();
         });

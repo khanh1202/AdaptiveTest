@@ -22,6 +22,10 @@ public class ImageCategory implements TestCategory {
     private Button next_btn;
     @FXML
     private Button done_btn;
+    @FXML
+    private Button correct_btn;
+    @FXML
+    private Button incorrect_btn;
 
     private ImageQuestion currentQuestion; //the question the user is being asked
     private int numQuestionsAsked; //total number of questions asked
@@ -54,7 +58,7 @@ public class ImageCategory implements TestCategory {
      * Set the text to all labels and url of the image depending on the current question
      */
     private void parseQuestion() {
-        difficulty_lbl.setText(currentQuestion.getDifficulty().toString());
+        difficulty_lbl.setText("Question " + Integer.toString(numQuestionsAsked + 1) + " (" + currentQuestion.getDifficulty().toString() + ")");
         question_img.setImage(new Image(getClass().getResource(currentQuestion.getImageUrl()).toExternalForm()));
         question_lbl.setText(currentQuestion.getText());
         score_lbl.setText("Current Score: " + Integer.toString(currentUser.getScoreImageTest()));
@@ -69,11 +73,13 @@ public class ImageCategory implements TestCategory {
                     e.getY() >= currentQuestion.getCorrectYFrom() && e.getY() <= currentQuestion.getCorrectYTo()) { /* If
                     user clicks on the region inside the valid rectangle */
                 isAnswerRight = true;
+
                 addScoreToUser();
                 score_lbl.setText("Current Score: " + Integer.toString(currentUser.getScoreImageTest()));
             }
             else
                 isAnswerRight = false;
+            changeAppearanceResultButtons(isAnswerRight);
             switchStatusImage(true); //make image available to be clicked
             numQuestionsAsked++;
             if (numQuestionsAsked < 5) //if user has not answered 5 questions
@@ -82,6 +88,7 @@ public class ImageCategory implements TestCategory {
         next_btn.setOnAction(e -> {
             switchStatusImage(false); //re-enable the image click
             setStatusNextButton(true); //disable next button
+            resetAppearanceResultButtons(); //change the appearance to default
             currentQuestion = generateNextQuestion();
             parseQuestion();
         });
@@ -139,5 +146,22 @@ public class ImageCategory implements TestCategory {
      */
     public void finishTest() {
         parentController.finishImageTest();
+    }
+
+    /**
+     * Change appearance of Correct/Incorrect buttons when user clicks on the image to indicate whether the answer is right or not
+     * @param isAnswerRight indicate the result of user's answer
+     */
+    private void changeAppearanceResultButtons(boolean isAnswerRight) {
+        if (isAnswerRight)
+            correct_btn.setStyle("-fx-background-color: green; -fx-text-fill: white");
+        else
+            incorrect_btn.setStyle("-fx-background-color: red; -fx-text-fill: white");
+
+    }
+
+    private void resetAppearanceResultButtons() {
+        correct_btn.setStyle("");
+        incorrect_btn.setStyle("");
     }
 }

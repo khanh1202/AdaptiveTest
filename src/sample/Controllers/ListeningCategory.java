@@ -67,7 +67,7 @@ public class ListeningCategory implements TestCategory {
      */
     private void parseQuestion() {
         question_lbl.setText(currentQuestion.getText());
-        difficulty_lbl.setText(currentQuestion.getDifficulty().toString());
+        difficulty_lbl.setText("Question " + Integer.toString(numQuestionsAnswered + 1) + " (" + currentQuestion.getDifficulty().toString() + ")");
         score_lbl.setText("Current Score: " + Integer.toString(currentUser.getScoreListeningTest()));
         answera_btn.setText(currentQuestion.getPossibleAnswers().get(0).getText());
         answerb_btn.setText(currentQuestion.getPossibleAnswers().get(1).getText());

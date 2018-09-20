@@ -129,6 +129,7 @@ public class TestsController {
                 if (currentTime <= 0) {
                     time.stop();
                     currentTestController.finishTest();
+                    currentUser.finishAllTest();
                     switchStatusAllButtons(true, true, true, true, true);
                 }
             }
