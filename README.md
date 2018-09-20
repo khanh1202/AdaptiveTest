@@ -9,3 +9,5 @@ In the category of recognizing critical information from a given big image/pictu
 In the category of spelling, the student will be prompted to spell a positive word starting with “G”, “J”, and “Z”, allowing him/her to receive 2, 5, and 10 marks respectively for correct answers.
 
 In the category of listening, the student will be prompted to select the keyword(s) from one-sentence recorded voice, two-sentence recorded voice, and three-sentence recorded voice. For 1-sentence, 2-sentence, and 3-sentence recorded voice of diverse accent, he/she will receive 2, 5, and 10 marks respectively for correct answers
+
+In the category of writing, the student will be prompted to write a simple, compound, and complex sentence. For a simple sentence, a compound sentence, and a complex sentence, he/she will be awarded with 2, 5, and 10 marks respectively for correct answers without any clue from the software. A sentence is considered simple if it has spaces and full stop. It is considered compund if it is simple and has conjunctions such as 
